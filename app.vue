@@ -19,38 +19,60 @@
           leave-to-class="translate-x-96 opacity-0"
           >
             <ul v-if="popoverOpen" id="menu" class="z-50 flex items-center text-lg font-light text-white bg-black h-full">
-              <li data-menuanchor="intro" class="w-28 h-full">
-                <a v-on:click="popoverOpen = false" href="#intro" class="flex items-center justify-center hover:border-b-4 border-cyan-500 w-full h-full">Intro</a>
-              </li>
-              <li data-menuanchor="projects" class="w-28 h-full">
+              <li v-if="!french" data-menuanchor="projects" class="w-28 h-full">
                 <a v-on:click="popoverOpen = false" href="#projects" class="flex items-center justify-center hover:border-b-4 border-cyan-500 w-full h-full">Projects</a>
+              </li>
+              <li v-if="french" data-menuanchor="projects" class="w-28 h-full">
+                <a v-on:click="popoverOpen = false" href="#projects" class="flex items-center justify-center hover:border-b-4 border-cyan-500 w-full h-full">Projets</a>
               </li>
               <li data-menuanchor="contact" class="w-28 h-full">
                 <a v-on:click="popoverOpen = false" href="#contact" class="flex items-center justify-center hover:border-b-4 border-cyan-500 w-full h-full">Contact</a>
+              </li>
+              <li v-if="!french" data-menuanchor="toggle" class="w-32 h-full">
+                <a v-on:click="popoverOpen = false; french = true" href="#" class="flex items-center justify-center hover:border-b-4 border-cyan-500 w-full h-full">Site français</a>
+              </li>
+              <li v-if="french" data-menuanchor="toggle" class="w-32 h-full">
+                <a v-on:click="popoverOpen = false; french = false" href="#" class="flex items-center justify-center hover:border-b-4 border-cyan-500 w-full h-full">English website</a>
               </li>
             </ul>
           </transition>
         </div>
         <div class="flex w-screen h-screen">
-          <div class="w-1/2 h-full flex items-center">
-            <p class="font-mono text-8xl">Nishyda ~<br/>$ <span class="animate-blink">█</span></p>
+          <div class="w-fit h-full flex flex-col justify-center whitespace-nowrap space-y-16 overflow-y-clip overflow-x-visible">
+            <p class="font-mono text-8xl text-zinc-600">DevOps|Game<br />dev|WebApps</p>
+            <p class="font-mono text-8xl">[Nishyda ~]<br />$ <span class="animate-blink">█</span></p>
+            <p class="font-mono text-8xl text-zinc-600">Android|Scr<br />ipting|UX/U</p>
           </div>
-          <div class="w-1/2 h-full flex flex-col items-end">
-            <div class="flex space-x-2 p-2">
-              <nuxt-icon name="go" class="text-6xl"/>
-              <nuxt-icon name="rust" class="text-5xl"/>
-              <nuxt-icon name="cpp" filled class="text-5xl"/>
-              <nuxt-icon name="php" class="text-6xl"/>
-              <nuxt-icon name="ts" filled class="text-5xl"/>
-              <nuxt-icon name="nuxt" class="text-6xl"/>
-              <nuxt-icon name="next" class="text-6xl"/>
+          <div style="background-image: url('servers.jpg')" class="w-full h-full bg-cover">
+            <div class="w-full h-full flex flex-col justify-center items-end space-y-2 pt-2 pr-14 backdrop-blur-sm backdrop-brightness-50">
+              <img src="go.png" class="w-14"/>
+              <img src="rust.png" class="w-14"/>
+              <img src="cpp.png" class="w-14"/>
+              <img src="php.png" class="w-14"/>
+              <img src="ts.png" class="w-14"/>
+              <nuxt-icon name="nuxt" class="flex items-center text-6xl h-6"/>
+              <nuxt-icon name="next" class="flex items-center text-6xl h-6"/>
             </div>
-            
           </div>
         </div>
       </div>
-      <div class="section bg-zinc-900">
-        <h3>Section 2</h3>
+      <div class="section bg-zinc-600 text-white">
+        <div class="w-screen h-screen flex items-center justify-center space-x-12">
+          <div v-if="!french" onclick="location.href='https://github.com/nishyda/nbase';" class="flex flex-col w-1/5 h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
+            <img src="nbase.png" class="object-cover h-1/2"/>
+            <div class="h-1/2 p-2">
+              <p class="font-bold text-5xl mt-2">nBase</p>
+              <p class="mt-2 text-xl">Key/value store with miniLZO compression. Developed in Rust and features a simple terminal utility.</p>
+            </div>
+          </div>
+          <div v-if="french" onclick="location.href='https://github.com/nishyda/nbase';" class="flex flex-col w-1/5 h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
+            <img src="nbase.png" class="object-cover h-1/2"/>
+            <div class="h-1/2 p-2">
+              <p class="font-bold text-5xl mt-2">nBase</p>
+              <p class="mt-2 text-xl">BDD clé/valeur avec compression miniLZO. Développé en Rust, utilisable en ligne de commande.</p>
+            </div>
+          </div>
+        </div>
       </div>
       <div class="section bg-zinc-900">
         <h3>Section 3</h3>
@@ -72,7 +94,8 @@ export default {
         navigation: true,
         anchors: ['intro', 'projects', 'contact']
       },
-      popoverOpen: false
+      popoverOpen: false,
+      french: false
     }
   },
   methods: {
