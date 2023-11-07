@@ -1,0 +1,19 @@
+version: "3"
+
+services:
+  eaji:
+    image: nginx:latest
+    networks:
+      - traefik_public
+    volumes:
+      - ./dist:/usr/share/nginx/html
+    labels:
+      - 'traefik.enable=true'
+      - 'traefik.http.routers.eaji.rule=Host(`eaji.software`)'
+      - 'traefik.http.routers.eaji.entrypoints=websecure'
+      - 'traefik.http.routers.eaji.tls.certresolver=myresolver'
+    restart: always
+
+networks:
+  traefik_public:
+    external: true

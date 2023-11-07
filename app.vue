@@ -40,7 +40,7 @@
         <div class="flex w-screen h-screen">
           <div class="w-fit h-full flex flex-col justify-center whitespace-nowrap space-y-16 overflow-y-clip overflow-x-visible">
             <p class="font-mono text-8xl text-zinc-600">DevOps|Game<br />dev|WebApps</p>
-            <p class="font-mono text-8xl">[Emerik ~]<br />$ <span class="animate-blink">█</span></p>
+            <p class="font-mono text-8xl">┌[Emerik ~]<br />└─ $<span class="animate-blink">█</span></p>
             <p class="font-mono text-8xl text-zinc-600">Android|Scr<br />ipting|UX/U</p>
           </div>
           <div style="background-image: url('servers.jpg')" class="w-full h-full bg-cover">
@@ -58,33 +58,22 @@
       </div>
       <div class="section bg-zinc-600 text-white">
         <div class="w-screen h-screen flex items-center justify-center space-x-12">
-          <div v-if="!french" onclick="location.href='https://github.com/nishyda/nbase';" class="flex flex-col w-1/5 h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
+          <div onclick="location.href='https://github.com/emerikaji/nbase';" class="flex flex-col aspect-[1/2] h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
             <img src="/nbase.png" class="object-cover h-1/2"/>
             <div class="h-1/2 p-2">
               <p class="font-bold text-5xl mt-2">nBase</p>
-              <p class="mt-2 text-xl">Key/value store with miniLZO compression. Developed in Rust and features a simple terminal utility.</p>
-            </div>
-          </div>
-          <div v-if="french" onclick="location.href='https://github.com/nishyda/nbase';" class="flex flex-col w-1/5 h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
-            <img src="/nbase.png" class="object-cover h-1/2"/>
-            <div class="h-1/2 p-2">
-              <p class="font-bold text-5xl mt-2">nBase</p>
-              <p class="mt-2 text-xl">BDD clé/valeur avec compression miniLZO. Développé en Rust, utilisable en ligne de commande.</p>
+              <p v-if="!french" class="mt-2 text-xl">Key/value store with miniLZO compression. Developed in Rust and features a simple terminal utility.</p>
+              <p v-if="french" class="mt-2 text-xl">BDD clé/valeur avec compression miniLZO. Développé en Rust, utilisable en ligne de commande.</p>
             </div>
           </div>
 
-          <div v-if="!french" onclick="location.href='https://github.com/nishyda/chain-rename';" class="flex flex-col w-1/5 h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
-            <img src="/rename.png" class="object-cover h-1/2"/>
+          <div onclick="location.href='https://https://github.com/emerikaji/site';" class="flex flex-col aspect-[1/2] h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
+            <img src="" class="object-cover h-1/2"/>
             <div class="h-1/2 p-2">
-              <p class="font-bold text-5xl mt-2">Chain Rename</p>
-              <p class="mt-2 text-xl">Rename all images in a folder in a row. Made with Python and Qt.</p>
-            </div>
-          </div>
-          <div v-if="french" onclick="location.href='https://github.com/nishyda/chain-rename';" class="flex flex-col w-1/5 h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
-            <img src="/rename.png" class="object-cover h-1/2"/>
-            <div class="h-1/2 p-2">
-              <p class="font-bold text-5xl mt-2">Chain Rename</p>
-              <p class="mt-2 text-xl">Outil pour renommer en masse les images dans un dossier. Utilise Python et Qt.</p>
+              <p v-if="!french" class="font-bold text-5xl mt-2">Website</p>
+              <p v-if="french" class="font-bold text-5xl mt-2">Site</p>
+              <p v-if="!french" class="mt-2 text-xl">This website uses Nuxt.js, Fullpage.js and Tailwind. It is hosted with the help of Traefik and Docker Compose.</p>
+              <p v-if="french" class="mt-2 text-xl">Ce site utilise Nuxt.js, Fullpage.js et Tailwind, et est déployé à l'aide de Traefik et Docker Compose.</p>
             </div>
           </div>
         </div>

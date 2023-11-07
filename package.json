@@ -6,7 +6,8 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "regen": "nuxt generate && sudo docker compose down && sudo docker compose up -d"
   },
   "devDependencies": {
     "@nuxtjs/svg": "^0.0.0",
