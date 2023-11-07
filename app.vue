@@ -67,7 +67,7 @@
             </div>
           </div>
 
-          <div onclick="location.href='https://https://github.com/emerikaji/site';" class="flex flex-col aspect-[1/2] h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
+          <div onclick="location.href='https://github.com/emerikaji/site';" class="flex flex-col aspect-[1/2] h-3/4 bg-zinc-900 shadow-zinc-800 hover:shadow-zinc-800 shadow-lg hover:shadow-xl rounded-lg transition hover:scale-105 overflow-hidden hover:cursor-pointer">
             <img src="" class="object-cover h-1/2"/>
             <div class="h-1/2 p-2">
               <p v-if="!french" class="font-bold text-5xl mt-2">Website</p>
